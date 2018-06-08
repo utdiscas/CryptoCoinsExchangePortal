@@ -1,5 +1,8 @@
 package com.cryptos.exchange.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,19 +14,23 @@ import java.sql.Date;
  * Created by caeruleum on 04.06.2018.
  */
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CryptoCoin {
 
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long id;
-    private String name;
+    private boolean contact;
     private  String email;
     private String coinType;
-    private Integer amountOfCoins;
-    private BigDecimal purchasePrice;
+    private String name;
+    private String phone;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern ="MM-dd-yyyy")
     private Date purchaseDate;
-    private boolean contact;
+    private BigDecimal purchasePrice;
+    private Integer amountOfCoins;
+
 
     public String getName() {
         return name;
@@ -88,7 +95,13 @@ public class CryptoCoin {
     public void setId(Long id) {
         this.id = id;
     }
+    public String getPhone() {
+        return phone;
+    }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
 
 }
