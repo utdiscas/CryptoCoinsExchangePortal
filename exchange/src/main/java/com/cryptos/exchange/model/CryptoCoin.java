@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -17,9 +16,8 @@ import java.sql.Date;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CryptoCoin {
 
-
     @Id
-    @GeneratedValue(strategy =  GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private boolean contact;
     private  String email;
@@ -28,7 +26,6 @@ public class CryptoCoin {
     private String phone;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern ="MM-dd-yyyy")
     private Date purchaseDate;
-    private BigDecimal purchasePrice;
     private Integer amountOfCoins;
 
 
@@ -62,14 +59,6 @@ public class CryptoCoin {
 
     public void setAmountOfCoins(Integer amountOfCoins) {
         this.amountOfCoins = amountOfCoins;
-    }
-
-    public BigDecimal getPurchasePrice() {
-        return purchasePrice;
-    }
-
-    public void setPurchasePrice(BigDecimal purchasePrice) {
-        this.purchasePrice = purchasePrice;
     }
 
     public Date getPurchaseDate() {

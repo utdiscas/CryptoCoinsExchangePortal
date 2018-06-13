@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>Owner Name</th>
+      <th>Email</th>
+      <th>Crypto coin type</th>
+      <th class="text-right">Number of coins</th>
+    </tr>
+    <tr *ngFor="let crypto of cryptos">
+      <td>
+        <a [routerLink]="['/admin/view', crypto.id]">{{crypto.name}}</a>
+      </td>
+      <td>
+        {{crypto.email}}
+      </td>
+      <td>
+        {{crypto.coinType}}
+      </td>
+      <td class="text-right">
+        {{crypto.amountOfCoins}}
+      </td>
+    </tr>
+  </table>
+</div>
