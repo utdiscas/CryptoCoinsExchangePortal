@@ -1,6 +1,7 @@
 # ExchangeUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+Training angular + java  project based on Pluralsight tutorial done by Dun Bunker.
+Generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
 ## Development server
 

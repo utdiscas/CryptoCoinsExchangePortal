@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-rendering: optimizeLegibility;
+    position: relative;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #2F465D;
+    background: linear-gradient(150deg,#C6D0DB 15%,#BEBDB8 70%,#A9A4A1 94%);
+  }
+  
+  h1 {
+    font-size: 2.0em;
+  }
+  
+  .table-bordered, .table-bordered td, .table-bordered th {
+    border: 1px solid #2F465D;
+  }
