@@ -11,13 +11,13 @@ export class ViewRegistartionComponent implements OnInit {
 
   public cryptoReg;
 
-  constructor(private cryptoService : CryptoService, private route: ActivatedRoute) { }
+  constructor(private cryptoService: CryptoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getCryptoReg(this.route.snapshot.params.id)
+    this.getCryptoReg(this.route.snapshot.params.id);
   }
 
-  getCryptoReg(id:number) {
+  getCryptoReg(id: number) {
     this.cryptoService.getUser(id).subscribe(
       data => {
         this.cryptoReg = data;

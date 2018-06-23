@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CryptoService } from "../../services/crypto.service";
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-//import { throw } from 'rxjs/';
+import { throw } from 'rxjs/';
 //import 'rxjs/add/observable/throw'
 
 @Component({
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 'Neo',
   ];
   cryptoform: FormGroup;
-  validMessage: string ='';
+  validMessage: string = '';
   constructor(private cryptoService: CryptoService) { }
 
   ngOnInit() {
@@ -37,20 +37,19 @@ export class HomeComponent implements OnInit {
   }
 
   submitRegistration() {
-    if (this.cryptoform.valid){
-      this.validMessage="Your Crypto Exchange Request has been submitted. Thank you!";
+    if (this.cryptoform.valid) {
+      this.validMessage = 'Your Crypto Exchange Request has been submitted. Thank you!';
       this.cryptoService.createCryptoUserRegistration(this.cryptoform.value).subscribe(
         data => {
           this.cryptoform.reset();
           return true;
         },
-        // error => {
-        //   return Observable.throwError(error); 
-        // }
-      )
+         error => {
+         return Observable.throw(error);
+         }
+      );
     } else {
-      this.validMessage = "Please fill out the form before submitting";
-    }
-  }  
-  
+      this.validMessage = 'Please fill out the form before submitting';
+}
+  }
 }
