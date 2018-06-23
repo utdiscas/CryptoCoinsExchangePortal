@@ -15,6 +15,9 @@ import java.sql.Date;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class CryptoCoin {
+    private CryptoCoin() {
+
+    }
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
